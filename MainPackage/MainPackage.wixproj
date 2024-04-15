@@ -1,0 +1,10 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.0">
+  <ItemGroup>
+    <ProjectReference Include="..\AppToBeIncluded\AppToBeIncluded.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="WixToolset.NetFx.wixext" Version="4.0.5" />
+		<PackageReference Include="WixToolset.UI.wixext" Version="4.0.5" />
+		<PackageReference Include="WixToolset.Util.wixext" Version="4.0.5" />
+	</ItemGroup>
+</Project>

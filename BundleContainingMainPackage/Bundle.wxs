@@ -1,0 +1,14 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+  <Bundle Name="BundleContainingMainPackage" Version="!(bind.packageVersion.MainPackage)" Manufacturer="!(wix.manufacturer)" UpgradeCode="9785f31b-a5eb-4b03-aee7-4f4c67135e33">
+	<WixVariable Id="manufacturer" Value="MyCompany" />
+    <BootstrapperApplication>
+      <bal:WixStandardBootstrapperApplication LicenseUrl="https://www.example.com/license" Theme="hyperlinkLicense" />
+    </BootstrapperApplication>
+
+    <Chain>
+      <!-- TODO: Define the list of chained packages. -->
+      <MsiPackage Id="MainPackage" SourceFile="$(var.MainPackage.TargetPath)" bal:DisplayInternalUICondition="WixBundleAction >= 6" />
+    </Chain>
+
+  </Bundle>
+</Wix>

@@ -1,0 +1,26 @@
+﻿<?if $(Platform) = x64 ?>
+<?define Win64 = "yes" ?>
+<?define product = "Demonstation"?>
+<?define productDescription = "Demonstration"?>
+<?define upgradeGuid = 94b8182f-41c4-451d-82f5-f893900994dd?>
+<?else?>
+<?define Win64 = "no" ?>
+<?define product = "Demonstration"?>
+<?define productDescription = "Demonstration (x86)"?>
+<?define upgradeGuid = a2e959de-1169-4b07-a105-b0946b89e030?>
+<?endif?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package Language="1033" Manufacturer="!(wix.manufacturer)" Name="!(wix.product)" Version="!(bind.fileVersion.TheApp)" UpgradeCode="$(upgradeGuid)" InstallerVersion="200">
+
+	<WixVariable Id="manufacturer" Value="MyCompany" />
+	<WixVariable Id="product" Value="$(product)" />
+
+		<SummaryInformation Description="$(productDescription)" Manufacturer="!(wix.manufacturer)" />
+
+		<Media Id="1" Cabinet="$(product).cab" EmbedCab="yes" CompressionLevel="high" />
+
+		<Feature Id="Main">
+      <ComponentGroupRef Id="AppComponents" />
+    </Feature>
+  </Package>
+</Wix>

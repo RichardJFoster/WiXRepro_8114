@@ -1,0 +1,12 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="AppComponents" Directory="INSTALLFOLDER">
+		<ComponentRef Id="MainAppComponent" />
+    </ComponentGroup>
+	  <DirectoryRef Id="Binaries" FileSource="$(AppToBeIncluded.TargetDir)">
+	  <Component Id="MainAppComponent">
+			  <File Id="TheApp" Source="AppToBeIncluded.exe" />
+	  </Component>
+	  </DirectoryRef>
+  </Fragment>
+</Wix>
